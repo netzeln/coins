@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/../web/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="/../web/css/bootstrap-theme.min.css" type="text/css">
-        <link rel="stylesheet" href="/../web/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css">
         <meta charset="utf-8">
         <title></title>
     </head>
     <body>
+        <form action="/getcoins" method="get">
+            <label for="money">Enter a Number of Cents</label>
+            <input type="number" name="money" >
+            <button type="submit" class="btn btn-primary" name="button">Submit</button>
+        </form>
+
+        <p>
+            {% if coins is not empty%}
+             You have:
+             <ul>
+                 <li>{{ coins.Quarter }} Quarters.</li>
+                 <li>{{ coins.Dime }} Dimes.</li>
+                 <li>{{ coins.Nickel }} Nickels.</li>
+                 <li>{{ coins.Penny }} Pennies.</li>
+             </ul>
+            {% endif %}
 
     </body>
 </html>
